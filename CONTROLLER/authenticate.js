@@ -17,7 +17,7 @@ exports.verifyUserAuthencity=async (req,res,next)=>{
     }
     else
     {
-        console.log('2')
+        console.log('hey baby')
         req.user=findParticularUser
         next()
     }
