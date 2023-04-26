@@ -5,6 +5,9 @@ const jwt=require('jsonwebtoken')
 exports.createSignUpPage=async (req,res,next)=>{
     let {name,email,password,number}=req.body
     
+    
+    console.log(req.body)
+    
     await User.findAll({where:{}})
 
     const signupUser=await User.create({email:email,name:name,password:password,mnumber:number})
