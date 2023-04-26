@@ -2,7 +2,7 @@ const User=require('../MODELS/usertable.js')
 const Address=require('../MODELS/address.js')
 const jwt=require('jsonwebtoken')
 
-exports.createSignUpPage=async (req,res,next)=>{
+export const createSignUpPage=async (req,res,next)=>{
     let {name,email,password,number}=req.body
     
     
@@ -13,7 +13,7 @@ exports.createSignUpPage=async (req,res,next)=>{
     const signupUser=await User.create({email:email,name:name,password:password,mnumber:number})
     res.status(200).send({})
 }
-exports.signInAlreadyPresentUser=async (req,res,next)=>{
+export const signInAlreadyPresentUser=async (req,res,next)=>{
     let email=req.body.email
     let password=req.body.password
 
