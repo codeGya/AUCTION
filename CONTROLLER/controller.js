@@ -3,10 +3,8 @@ const Address=require('../MODELS/address.js')
 const jwt=require('jsonwebtoken')
 
 exports.createSignUpPage=async (req,res,next)=>{
-    let name=req.body.name
-    let email=req.body.email
-    let password=req.body.password
-    let number=req.body.number
+    let {name,email,password,number}=req.body
+    
     await User.findAll({where:{}})
 
     const signupUser=await User.create({email:email,name:name,password:password,mnumber:number})
